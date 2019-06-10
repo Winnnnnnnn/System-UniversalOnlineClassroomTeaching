@@ -1,0 +1,677 @@
+/*清除全部样式*/
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+    margin: 0;
+    padding: 0;
+}
+*{box-sizing: border-box;}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+body {
+    font-family: "Microsoft YaHei";
+    background: #f5f6f7;
+}
+h1, h2, h3, h4, h5, h6{font-weight:normal;}
+ul,ol {
+    list-style: none;
+}
+img {
+    border: none;
+    vertical-align: middle;
+}
+a {
+    text-decoration: none;
+}
+input, textarea {
+    background:none;
+    outline: none;
+    border: none;
+}
+textarea {
+    resize: none;
+    overflow: auto;
+}
+button {
+    outline: none;
+    border: none;
+}
+button:focus {
+    outline: none;
+    border: none;
+}
+.fl {
+    /*左浮动*/
+    float: left
+}
+.fr {
+    /*右浮动*/
+    float: right
+}
+.cf{
+    /*清除浮动*/
+    clear: both;
+}
+.tl {
+    /*左对齐*/
+    text-align: left;
+}
+.tc {
+    /*居中*/
+    text-align: center
+}
+.tr {
+    /*右对齐*/
+    text-align: right;
+}
+/*淡入动画开始*/
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    /*初始状态 透明度为0*/
+    40% {
+        opacity: 0;
+    }
+    /*过渡状态 透明度为0*/
+    100% {
+        opacity: 1;
+    }
+    /*结束状态 透明度为1*/
+}
+@-webkit-keyframes fade-in { /*针对webkit内核*/
+    0% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+/*淡入动画结束*/
+
+.LoginBody {
+    /*登录页面主布局*/
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.LoginBody video {
+    /*视频背景播放器样式*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.LoginCover {
+    /*视频播放器封面*/
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../data/Audience.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.LoginOverlay {
+    /*透明蒙板*/
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.LoginBg {
+    /*登录框*/
+    z-index: 2;
+    position: absolute;
+    display: inline-block;
+    top: 20%;
+    left: 50%;
+    transform: translateY(-50%);
+    transform: translatex(-50%);
+    animation: fade-in; /*动画名称*/
+    animation-duration: 1.5s; /*动画持续时间*/
+    -webkit-animation: fade-in 1.5s; /*针对webkit内核*/
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #fff;
+}
+
+.LoginLogo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.LoginEditBg {
+    /*文本输入框背景*/
+    width: auto;
+    display: inline-block;
+    border-radius: 30px;
+    border: 1px solid #fff;
+    margin: auto;
+    padding: 10px;
+}
+
+.LoginEditBg input {
+    /*输入框样式*/
+    font-size: 23px;
+    color: #ffffff;
+    vertical-align: middle;
+}
+
+.LoginEditBg img {
+    /*图片样式*/
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.LoginSelect {
+    /*登录身份选择*/
+    border-radius: 20px;
+    border: 1px solid #fff;
+    outline: none;
+    font-size: 23px;
+    vertical-align: middle;
+    padding: 5px 20px;
+    float: left;
+}
+
+.LoginSignUp {
+    display: block;
+    font-size: 23px;
+    text-decoration: none;
+    vertical-align: middle;
+    padding: 5px 20px;
+    float: right;
+    color: #fff;
+}
+
+.LoginSignUp:hover {
+    color: #0083ce;
+}
+
+.LoginBack {
+    display: block;
+    font-size: 23px;
+    text-decoration: none;
+    vertical-align: middle;
+    padding: 5px 20px;
+    float: left;
+    color: #fff;
+}
+
+.LoginBack:hover {
+    color: #0083ce;
+}
+
+.LoginButton {
+    /*登录按钮*/
+    background: url('../image/icon/登录.png') no-repeat;
+    background-size: 60px 60px;
+    border: 0;
+    outline: none;
+    width: 60px;
+    height: 60px;
+    margin: 20px auto;
+    transition: all 1s;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    -webkit-animation-name: scaleDraw; /*关键帧名称*/
+    -webkit-animation-timing-function: ease-in-out; /*动画的速度曲线*/
+    -webkit-animation-iteration-count: infinite;  /*动画播放的次数*/
+    -webkit-animation-duration: 5s; /*动画所花费的时间*/
+}
+
+.LoginButton:hover {
+    /*登录按钮选中状态*/
+    background: url('../image/icon/登录选中.png') no-repeat;
+    background-size: 60px 60px;
+}
+
+.LoginForm {
+    display: none;
+}
+.FullBody {
+    /*全屏背景*/
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.AdminNav {
+    /*管理员导航栏*/
+    list-style-type: none;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #0083ce;
+    /*设置文本不可选中*/
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: #2c3e50;
+    z-index: 999;
+}
+.AdminNav li {
+    height: 50px;
+    display: inline-block;
+}
+.AdminNav li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 22px;
+}
+.AdminNav img {
+    height: 50px;
+    vert-align: middle;
+    margin-left: 100px;
+    margin-right: 50px;
+    float: left;
+}
+.AdminNav li a:hover {
+    color: #0083ce;
+}
+.AdminMain {
+    /*管理页主布局*/
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    position: absolute;
+    top: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: none;
+}
+.mytable {
+    background: #fff;
+}
+
+.mytable th {
+    background: #2c3e50;
+    color: #fff;
+}
+
+.BaseNav {
+    /*通用的顶部导航栏*/
+    width: 100%;
+    background: #2c3e50;
+    /*设置文本不可选中*/
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.BaseNav li {
+    display:inline-block;
+    padding: 10px;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+    height: 60px;
+}
+.BaseNav li:hover {
+    background: #34495e;
+}
+.BaseNav li img {
+    height: 40px;
+    padding-left:30px;
+    padding-right:30px;
+}
+.BaseNav li a {
+    font-size: 20px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    text-decoration: none;
+}
+.BaseMain {
+    /*管理页主布局*/
+    display: none;
+    padding: 0 200px;
+    margin: 20px auto;
+    width: 100%;
+    color: #000;
+    position: fixed;
+    top: 60px;
+    bottom: 15px;
+    overflow-y: auto;
+}
+.BaseLine{
+    width: 100%;
+    height: 1px;
+    margin-top: 20px;
+    clear: both;
+    background: #000;
+}
+.NoticeBg {
+    background: #fff;
+    border-top: 1px solid #e6e6e6;
+    border-left: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+}
+.NoticeBg h3 {
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 20px;
+    float: left
+}
+.NoticeCard {
+    border-bottom: 1px solid #e6e6e6;
+    padding: 20px;
+}
+.NoticeTitle {
+    width: 100%;
+}
+.NoticeTitle h4 {
+    float: left;
+    margin-right: 10px;
+    /*设置文本不可选中*/
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.NoticeTitle button {
+    float: right;
+    margin-left: 10px;
+    outline: none;
+    border: none;
+}
+.NoticeTitle button:focus {
+    outline: none;
+    border: none;
+}
+@keyframes scaleDraw {  /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
+    0%{
+        transform: scale(1);  /*开始为原始大小*/
+    }
+    25%{
+        transform: scale(1.1); /*放大1.1倍*/
+    }
+    50%{
+        transform: scale(1);
+    }
+    75%{
+        transform: scale(1.1);
+    }
+}
+.NoticeImg{
+    width: 30px;
+    height: 30px;
+    vertical-align:middle;
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+    -webkit-animation-name: scaleDraw; /*关键帧名称*/
+    -webkit-animation-timing-function: ease-in-out; /*动画的速度曲线*/
+    -webkit-animation-iteration-count: infinite;  /*动画播放的次数*/
+    -webkit-animation-duration: 5s; /*动画所花费的时间*/
+}
+.NoticeAddBtn {
+    margin-top: 20px;
+    margin-right: 20px;
+    outline: none;
+    border: none;
+}
+.NoticeAddBtn:focus {
+    outline: none;
+    border: none;
+}
+.MessageCard {
+    border-bottom: 1px solid #e6e6e6;
+    padding: 20px;
+}
+
+.MessageCardLeft {
+    float: left;
+    width: 50%;
+    word-wrap: break-word;
+}
+
+.MessageCardRight {
+    float: right;
+    position: relative;
+    width: 50%;
+}
+
+.MessageCardRight h4 {
+    margin-bottom: 10px;
+}
+
+.MessageCardName {
+    float: left;
+    margin-right: 20px;
+}
+
+.MessageCardLine {
+    width: 100%;
+    height: 1px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.MessageCardReply {
+    text-align: left;
+    display: none;
+}
+
+.MessageCardReply textarea {
+    width: 100%;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.MessageCardReply button {
+    margin-top: 10px;
+}
+
+.MessageCardTool {
+    width: 100%;
+    text-align: right;
+}
+
+.MessageCardTool button {
+    outline: none;
+    border: none;
+}
+
+.MessageCardTool button:hover {
+    outline: none;
+    border: none;
+}
+
+.ArticleMain {
+    width: 100%;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 20px;
+    display: inline-block;
+}
+
+.ArticleTitle{
+    width: 100%;
+    border-bottom: 1px solid #e6e6e6;
+    display: inline-block;
+    padding-bottom: 20px;
+}
+
+.ArticleTitle a {
+    max-width: 80%;
+    display: block;
+    float: left;
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 20px;
+}
+
+.ArticleTitle a:hover{
+    color: #F3CD26;
+}
+
+.ArticleTitle h5 {
+    float: right;
+    font-size: 15px;
+    color: #ccc;
+    line-height: 15px;
+    vertical-align: middle;
+}
+
+.Bottom {
+    font-size: 15px;
+    width: 100%;
+    color: #000;
+    text-align: center;
+    position: fixed;
+    bottom: 10px;
+    height: 15px;
+    line-height: 15px;
+}
+
+.ArticleList {
+    width: 100%;
+    float: left;
+    padding-right: 20px;
+}
+
+.ArticleDetail {
+    width: 70%;
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left: 1px solid #e6e6e6;
+    display: none;
+}
+
+.ArticleDetailTitle {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    word-break:break-all;
+    white-space:pre-wrap;
+    word-wrapL:break-word;
+}
+
+.ArticleDetail p {
+    display: block;
+    word-break:break-all;
+    white-space:pre-wrap;
+    word-wrapL:break-word;
+    width: 100%;
+}
+
+.FileTable {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.SelectTeacher {
+    /*教师选择*/
+    max-height: 300px;
+    text-align: center;
+    overflow-y: auto;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+
+.SelectTeacher li {
+    display: block;
+    padding: 5px 0;
+    font-size: 20px;
+}
+
+.SelectTeacher li:hover {
+    background-color: #0083ce;
+}
+
+/*自定义滚动条开始*/
+/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+    width: 10px; /*对垂直流动条有效*/
+    height: 10px; /*对水平流动条有效*/
+}
+/*定义滚动条的轨道颜色、内阴影及圆角*/
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #bdc3c7;
+    border-radius: 7px;
+}
+/*定义滑块颜色、内阴影及圆角*/
+::-webkit-scrollbar-thumb {
+    border-radius: 7px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #fff;
+}
+/*定义两端按钮的样式*/
+::-webkit-scrollbar-button {
+    display: none;
+}
+/*定义右下角汇合处的样式*/
+::-webkit-scrollbar-corner {
+    display: none;
+}
+/*自定义滚动条结束*/
+
+.StudentArticle {
+    /*文章中心*/
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.HomeTop {
+    /*首页顶部*/
+    width: 100%;
+    max-height: 70%;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.HomeTopLeft {
+    width: 50%;
+    float: left;
+    padding-right: 20px;
+}
+
+.HomeTopRight {
+    width: 50%;
+    float: left;
+}
+
+
